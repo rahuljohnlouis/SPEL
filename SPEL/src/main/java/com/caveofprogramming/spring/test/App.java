@@ -12,8 +12,9 @@ public class App {
 				"com/caveofprogramming/spring/test/beans/beans.xml");
 
 		OffersDAO offersDao = (OffersDAO) context.getBean("offersDao");
-
+		offersDao.delete(2);
 		List<Offer> offers = offersDao.getOffers();
+		System.out.println("Using Query For Object "+offersDao.getOffer(1));
 
 		for(Offer offer: offers)
 		{
